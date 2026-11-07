@@ -1,7 +1,0 @@
-{
-  "expectedBoard": "ASUS PRIME Z790-P WIFI",
-  "sensors": [
-    { "identifier": "/lpc/nct6798d/0/temperature/2", "name": "Motherboard" },
-    { "identifier": "/lpc/nct6798d/0/temperature/3", "name": "VRM Thermistor" }
-  ]
-}

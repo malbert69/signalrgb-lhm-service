@@ -11,7 +11,7 @@ const adapter = {
   on(event, callback) {
     if (event === 'message') socket.on('message', (bytes, remote) => {
       assert.equal(remote.address, '127.0.0.1');
-      try { const packet = JSON.parse(bytes.toString('utf8')); if (packet.status === 'ok') { timestamps.add(packet.sourceTimeMs); serviceLastSeen = Date.now(); } } catch (_) {}
+      try { const packet = JSON.parse(bytes.toString('utf8')); if (packet.protocol === 2 && packet.status === 'ok' && packet.board) { timestamps.add(packet.sourceTimeMs); serviceLastSeen = Date.now(); } } catch (_) {}
       callback({ data: bytes.toString('utf8'), address: remote.address });
     });
     else socket.on(event, callback);

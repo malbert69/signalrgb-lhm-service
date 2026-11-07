@@ -1,7 +1,7 @@
 import udp from "@SignalRGB/udp";
 
-export function Name() { return "ASUS Motherboard Temperatures (LHM)"; }
-export function Version() { return "0.1.0"; }
+export function Name() { return "ASUS PRIME Z790-P WIFI Temperatures (LHM)"; }
+export function Version() { return "0.2.0"; }
 export function Publisher() { return "Local custom plugin"; }
 export function Type() { return "network"; }
 export function Size() { return [1, 1]; }
@@ -11,86 +11,165 @@ export function LedNames() { return []; }
 export function LedPositions() { return []; }
 export function SupportsFanControl() { return true; }
 
-const SENSOR_NAMES = {
-    "/lpc/nct6798d/0/temperature/2": "Motherboard",
-    "/lpc/nct6798d/0/temperature/3": "VRM Thermistor"
+// All board-specific knowledge lives here, never in the Windows service.
+const BOARD = {
+    manufacturers: ["ASUSTeK COMPUTER INC.", "ASUS"],
+    model: "PRIME Z790-P WIFI",
+    controllerId: "local-asus-z790-lhm-temperatures-v1",
+    controllerName: "ASUS PRIME Z790-P WIFI Temperatures",
+    sensors: {
+        "/lpc/nct6798d/0/temperature/2": "Motherboard",
+        "/lpc/nct6798d/0/temperature/3": "VRM Thermistor"
+    }
 };
+const SENSOR_DEFINITIONS = createSensorDefinitions();
 const MAX_AGE_MS = 10000;
-let socket;
-let lastPoll = 0;
+let client;
 let latest;
-let lastReceived = 0;
 let previousState = "";
-let pendingNonce;
 
-export function Initialize() {
-    for (const id of Object.keys(SENSOR_NAMES)) device.createTemperatureSensor(SENSOR_NAMES[id]);
-    socket = udp.createSocket();
-    socket.on("message", onMessage);
-    socket.on("error", function (error, message) {
-        latest = undefined;
-        device.log("Native sensor socket error: " + (message || error));
-    });
-    socket.bind(0);
-    device.log("Connecting to the LibreHardwareMonitor service on 127.0.0.1:43871");
+function createSensorDefinitions() {
+    const definitions = {};
+    for (const id of Object.keys(BOARD.sensors || {})) definitions[id] = { name: BOARD.sensors[id] };
+    for (const variant of BOARD.variants || []) {
+        for (const chip of variant.chips) {
+            for (const sensor of variant.sensors) {
+                const id = "/lpc/" + chip + "/0/temperature/" + sensor.index;
+                definitions[id] = { name: sensor.displayName || sensor.name, nativeName: sensor.name };
+            }
+        }
+    }
+    return definitions;
 }
 
-function onMessage(message) {
-    const text = message && message.data !== undefined ? message.data : message;
-    if (typeof text !== "string" || text.length > 8192) return;
-    try {
-        const packet = JSON.parse(text);
-        if (!pendingNonce || packet.nonce !== pendingNonce) return;
-        if (packet.protocol !== 1 || packet.status !== "ok" || !Array.isArray(packet.sensors)) {
-            latest = undefined;
-            return;
-        }
-        const age = Date.now() - packet.sourceTimeMs;
-        if (!Number.isFinite(packet.sourceTimeMs) || age > MAX_AGE_MS || age < -2000) {
-            latest = undefined;
-            return;
-        }
-        const values = {};
-        for (const reading of packet.sensors) {
-            if (!reading || !Object.prototype.hasOwnProperty.call(SENSOR_NAMES, reading.id)) continue;
-            if (typeof reading.celsius !== "number" || !Number.isFinite(reading.celsius) ||
-                reading.celsius < -20 || reading.celsius > 150) continue;
-            values[reading.id] = reading.celsius;
-        }
-        latest = { sourceTimeMs: packet.sourceTimeMs, values: values };
-        lastReceived = Date.now();
-    } catch (_) { latest = undefined; }
+function sensorNames() {
+    const names = Object.keys(SENSOR_DEFINITIONS).map(function (id) { return SENSOR_DEFINITIONS[id].name; });
+    return names.filter(function (name, index) { return names.indexOf(name) === index; });
+}
+
+function normalize(value) {
+    return typeof value === "string" ? value.trim().replace(/\s+/g, " ").toUpperCase() : "";
+}
+
+function matchesBoard(board) {
+    return board && (BOARD.models || [BOARD.model]).some(function (model) { return normalize(board.model) === normalize(model); }) &&
+        BOARD.manufacturers.some(function (manufacturer) { return normalize(board.manufacturer) === normalize(manufacturer); });
+}
+
+function isFresh(packet) {
+    const age = packet && Date.now() - packet.sourceTimeMs;
+    return packet && Number.isSafeInteger(packet.sourceTimeMs) && age <= MAX_AGE_MS && age >= -2000;
+}
+
+function verifiedValues(packet) {
+    if (!packet || packet.protocol !== 2 || packet.status !== "ok" || !matchesBoard(packet.board) ||
+        !isFresh(packet) || !Array.isArray(packet.sensors) || packet.sensors.length > 128) return undefined;
+    const values = {};
+    const seen = {};
+    const seenNames = {};
+    for (const reading of packet.sensors) {
+        if (!reading || typeof reading.id !== "string" || !Object.prototype.hasOwnProperty.call(SENSOR_DEFINITIONS, reading.id)) continue;
+        if (Object.prototype.hasOwnProperty.call(seen, reading.id)) return undefined;
+        seen[reading.id] = true;
+        const definition = SENSOR_DEFINITIONS[reading.id];
+        if (definition.nativeName && reading.name !== definition.nativeName) continue;
+        if (typeof reading.celsius !== "number" || !Number.isFinite(reading.celsius) ||
+            reading.celsius < -20 || reading.celsius > 150) continue;
+        if (Object.prototype.hasOwnProperty.call(seenNames, definition.name)) return undefined;
+        seenNames[definition.name] = true;
+        values[reading.id] = reading.celsius;
+    }
+    return values;
+}
+
+// Device and discovery contexts each own a socket and request nonce.
+function BridgeClient(onPacket, onError) {
+    const socket = udp.createSocket();
+    let pendingNonce;
+    let lastPoll;
+    let closed = false;
+    socket.on("message", function (message) {
+        if (closed) return;
+        const text = message && message.data !== undefined ? message.data : message;
+        if (typeof text !== "string" || text.length > 60000) { onPacket(undefined); return; }
+        try {
+            const packet = JSON.parse(text);
+            if (!packet || !pendingNonce || packet.nonce !== pendingNonce) return;
+            pendingNonce = undefined;
+            onPacket(packet);
+        } catch (_) { onPacket(undefined); }
+    });
+    socket.on("error", function (error, message) {
+        if (closed) return;
+        pendingNonce = undefined;
+        onPacket(undefined);
+        onError(message || error);
+    });
+    socket.bind(0);
+    this.Poll = function (intervalMs) {
+        const now = Date.now();
+        if (closed || (lastPoll !== undefined && now - lastPoll < (intervalMs || 1000))) return;
+        lastPoll = now;
+        pendingNonce = now.toString(16) + "-" + Math.random().toString(16).slice(2);
+        try { socket.write({ protocol: 2, request: "srgb-lhm/2", nonce: pendingNonce }, "127.0.0.1", 43871); }
+        catch (error) { pendingNonce = undefined; onPacket(undefined); onError(error); }
+    };
+    this.Close = function () {
+        if (closed) return;
+        closed = true;
+        pendingNonce = undefined;
+        socket.close();
+    };
+}
+
+export function Initialize() {
+    if (client) client.Close();
+    latest = undefined;
+    previousState = "";
+    for (const name of sensorNames()) device.createTemperatureSensor(name);
+    client = new BridgeClient(function (packet) {
+        const values = verifiedValues(packet);
+        latest = values ? { sourceTimeMs: packet.sourceTimeMs, values: values } : undefined;
+    }, function (error) { device.log("Native sensor socket error: " + error); });
+    device.log("Connecting to the LibreHardwareMonitor service on 127.0.0.1:43871 (protocol 2)");
 }
 
 export function Render() {
-    const now = Date.now();
-    if (now - lastPoll >= 1000) {
-        lastPoll = now;
-        pendingNonce = now.toString(16) + "-" + Math.random().toString(16).slice(2);
-        try { socket.write({ protocol: 1, request: "srgb-lhm/1", nonce: pendingNonce }, "127.0.0.1", 43871); }
-        catch (_) { latest = undefined; }
-    }
-    const fresh = latest && now - lastReceived <= MAX_AGE_MS && now - latest.sourceTimeMs <= MAX_AGE_MS &&
-        latest.sourceTimeMs <= now + 2000;
+    if (client) client.Poll();
+    const fresh = isFresh(latest);
     const state = fresh && Object.keys(latest.values).length ? "receiving" : "unavailable";
     if (state !== previousState) { device.log("Native motherboard sensors: " + state); previousState = state; }
     if (!fresh) return;
-    for (const id of Object.keys(latest.values)) device.SetTemperature(SENSOR_NAMES[id], latest.values[id]);
+    for (const id of Object.keys(latest.values)) device.SetTemperature(SENSOR_DEFINITIONS[id].name, latest.values[id]);
 }
 
 export function Shutdown() {
     latest = undefined;
-    if (socket) socket.close();
-    for (const id of Object.keys(SENSOR_NAMES)) device.removeTemperatureSensor(SENSOR_NAMES[id]);
+    if (client) { client.Close(); client = undefined; }
+    for (const name of sensorNames()) device.removeTemperatureSensor(name);
 }
 
 export function DiscoveryService() {
+    let discoveryClient;
+    let announced = false;
+    let retryMs = 5000;
     this.Initialize = function () {
-        const controller = { id: "local-asus-z790-lhm-temperatures-v1", ip: "127.0.0.1",
-            name: "ASUS PRIME Z790-P WIFI Temperatures" };
-        service.addController(controller);
-        service.announceController(controller);
-        service.log("Announced local LibreHardwareMonitor temperature provider");
+        if (discoveryClient) discoveryClient.Close();
+        announced = false;
+        retryMs = 5000;
+        discoveryClient = new BridgeClient(function (packet) {
+            retryMs = packet && packet.protocol === 2 && packet.board && !matchesBoard(packet.board) ? 60000 : 5000;
+            const values = verifiedValues(packet);
+            if (announced || !values || Object.keys(values).length === 0) return;
+            const controller = { id: BOARD.controllerId, ip: "127.0.0.1", name: BOARD.controllerName };
+            service.addController(controller);
+            service.announceController(controller);
+            announced = true;
+            discoveryClient.Close();
+            service.log("Announced verified motherboard temperature provider: " + BOARD.model);
+        }, function (error) { service.log("Native sensor discovery error: " + error); });
+        discoveryClient.Poll();
     };
-    this.Update = function () {};
+    this.Update = function () { if (discoveryClient && !announced) discoveryClient.Poll(retryMs); };
+    this.Shutdown = function () { if (discoveryClient && !announced) discoveryClient.Close(); };
 }

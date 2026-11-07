@@ -13,7 +13,12 @@ if($service) {
 }
 if($RemovePlugin) {
   if(-not $PluginDirectory) {$PluginDirectory=Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'WhirlwindFX\Plugins'}
-  $pluginPath=Join-Path $PluginDirectory 'ASUS_LHM_Temperatures.js'
-  if(Test-Path -LiteralPath $pluginPath) {Remove-Item -LiteralPath $pluginPath}
+  $plugins=@(Get-ChildItem -LiteralPath $PSScriptRoot -Filter '*_LHM_Temperatures.js' -File)
+  $catalogDirectory=Join-Path $PSScriptRoot 'plugins'
+  if(Test-Path -LiteralPath $catalogDirectory) {$plugins+=@(Get-ChildItem -LiteralPath $catalogDirectory -Filter '*_LHM_Temperatures.js' -File)}
+  foreach($plugin in $plugins) {
+    $pluginPath=Join-Path $PluginDirectory $plugin.Name
+    if(Test-Path -LiteralPath $pluginPath) {Remove-Item -LiteralPath $pluginPath}
+  }
 }
 Write-Host 'Service removed. Program files, configuration, logs, and the shared PawnIO driver were retained.'

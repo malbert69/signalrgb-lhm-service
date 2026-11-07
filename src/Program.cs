@@ -11,8 +11,10 @@ internal static class Program
 {
     public const string ServiceName = "SignalRgbSensorBridge";
     public const int Port = 43871;
-    public const string Request = "srgb-lhm/1";
+    public const int Protocol = 2;
+    public const string Request = "srgb-lhm/2";
     public const int StaleMs = 10000;
+    public const int MaxPacketBytes = 60000;
     public static readonly JsonSerializerOptions Json = new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase, PropertyNameCaseInsensitive = true };
     public static readonly string DataDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), ServiceName);
 
@@ -74,24 +76,25 @@ internal static class Program
 }
 
 internal record NativeReading(string Identifier, string Hardware, string Name, double? Celsius);
-internal record ProbeResult(bool Administrator, bool DriverInstalled, string? DriverVersion, string Board, NativeReading[] Sensors);
-internal record Mapping(string Identifier, string Name);
-internal record BridgeConfig(string ExpectedBoard, Mapping[] Sensors);
+internal record BoardIdentity(string Manufacturer, string Model, string Version);
+internal record ProbeResult(bool Administrator, bool DriverInstalled, string? DriverVersion, BoardIdentity Board, NativeReading[] Sensors);
 internal record Query(int Protocol, string Request, string Nonce);
-internal record Reading(string Id, string Name, double Celsius);
-internal record Packet(int Protocol, string Status, long SourceTimeMs, string Detail, Reading[] Sensors, string? Nonce = null);
+internal record Reading(string Id, string Hardware, string Name, double Celsius);
+internal record Packet(int Protocol, string Status, long SourceTimeMs, string Detail, BoardIdentity? Board, Reading[] Sensors, string? Nonce = null);
 
 internal sealed class NativeSource : IDisposable
 {
     private readonly Computer _computer;
-    public string Board { get; }
+    public BoardIdentity Board { get; }
     public NativeSource()
     {
         // Fresh in-memory settings keep LHM's fan ControlMode undefined.
         // This service never calls a sensor's Control property or any SetSoftware method.
         _computer = new Computer() { IsMotherboardEnabled = true };
         _computer.Open();
-        Board = string.Join("; ", _computer.Hardware.Select(h => h.Name));
+        var board = _computer.SMBios?.Board;
+        // Publish only the fields needed for board matching; never serial numbers.
+        Board = new BoardIdentity(board?.ManufacturerName?.Trim() ?? "", board?.ProductName?.Trim() ?? "", board?.Version?.Trim() ?? "");
     }
     public List<NativeReading> Read()
     {
@@ -114,47 +117,43 @@ internal sealed class NativeSource : IDisposable
 
 internal static class PacketBuilder
 {
-    public static Packet Build(IEnumerable<NativeReading> values, Mapping[] mappings, long now)
+    public static Packet Build(IEnumerable<NativeReading> values, BoardIdentity board, long now)
     {
-        var allowed = mappings.ToDictionary(m => m.Identifier, StringComparer.Ordinal);
         var result = new List<Reading>();
-        var seen = new HashSet<string>();
+        var seen = new HashSet<string>(StringComparer.Ordinal);
         foreach (var value in values)
         {
-            if (!allowed.TryGetValue(value.Identifier, out var mapping) || value.Celsius is not double temperature ||
+            if (string.IsNullOrWhiteSpace(value.Identifier) || value.Celsius is not double temperature ||
                 !double.IsFinite(temperature) || temperature < -20 || temperature > 150) continue;
             if (!seen.Add(value.Identifier)) throw new InvalidDataException("Duplicate native sensor identity.");
-            result.Add(new Reading(value.Identifier, mapping.Name, Math.Round(temperature, 3)));
+            if (result.Count == 128) throw new InvalidDataException("Native temperature inventory exceeds 128 sensors.");
+            result.Add(new Reading(value.Identifier, value.Hardware, value.Name, Math.Round(temperature, 3)));
         }
-        return new Packet(1, result.Count > 0 ? "ok" : "unavailable", now,
-            $"{result.Count}/{mappings.Length} configured native sensors available", result.ToArray());
+        return new Packet(Program.Protocol, result.Count > 0 ? "ok" : "unavailable", now,
+            $"{result.Count} native motherboard temperatures available", board, result.ToArray());
     }
-    public static BridgeConfig LoadConfig()
+
+    public static byte[] Reply(Packet packet, string nonce, long now)
     {
-        var path = Path.Combine(AppContext.BaseDirectory, "sensors.json");
-        var config = JsonSerializer.Deserialize<BridgeConfig>(File.ReadAllText(path), Program.Json)
-            ?? throw new InvalidDataException("Missing sensor configuration.");
-        var mappings = config.Sensors ?? [];
-        if (string.IsNullOrWhiteSpace(config.ExpectedBoard)) throw new InvalidDataException("Configure the expected motherboard model.");
-        if (mappings.Length is 0 or > 32 || mappings.Any(m => string.IsNullOrWhiteSpace(m.Identifier) || string.IsNullOrWhiteSpace(m.Name) || m.Name.Length > 120) ||
-            mappings.Select(m => m.Identifier).Distinct().Count() != mappings.Length || mappings.Select(m => m.Name).Distinct().Count() != mappings.Length)
-            throw new InvalidDataException("sensors.json must contain 1–32 unique, verified native identifiers and display names.");
-        return config;
+        if (now - packet.SourceTimeMs > Program.StaleMs || packet.SourceTimeMs > now + 2000)
+            packet = packet with { Status = "unavailable", Detail = "Native sensor samples are stale", Sensors = [] };
+        byte[] data = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(packet with { Nonce = nonce }, Program.Json));
+        if (data.Length <= Program.MaxPacketBytes) return data;
+        return Encoding.UTF8.GetBytes(JsonSerializer.Serialize(new Packet(Program.Protocol, "unavailable", packet.SourceTimeMs,
+            "Native sensor inventory exceeds the UDP packet limit", null, [], nonce), Program.Json));
     }
 }
 
 internal static class ServiceCore
 {
-    private static Packet _latest = new(1, "unavailable", 0, "Native sensor reader starting", []);
+    private static Packet _latest = new(Program.Protocol, "unavailable", 0, "Native sensor reader starting", null, []);
     public static async Task RunAsync(CancellationToken cancellation)
     {
-        BridgeConfig config = PacketBuilder.LoadConfig();
-        Mapping[] mappings = config.Sensors;
         // A stalled hardware read cannot keep old data fresh: UDP runs separately and
         // returns the original sample timestamp, which the plugin must validate.
-        Task reader = Task.Run(() => Poll(config, cancellation), cancellation);
+        Task reader = Task.Run(() => Poll(cancellation), cancellation);
         using var udp = new UdpClient(new IPEndPoint(IPAddress.Loopback, Program.Port));
-        Program.Log($"Listening only on 127.0.0.1:{Program.Port}; native driver={PawnIo.Version}; configured sensors={mappings.Length}");
+        Program.Log($"Listening only on 127.0.0.1:{Program.Port}; protocol={Program.Protocol}; native driver={PawnIo.Version}");
         try
         {
             while (!cancellation.IsCancellationRequested)
@@ -164,11 +163,9 @@ internal static class ServiceCore
                 Query? query;
                 try { query = JsonSerializer.Deserialize<Query>(request.Buffer, Program.Json); }
                 catch (JsonException) { continue; }
-                if (query?.Protocol != 1 || query.Request != Program.Request || string.IsNullOrEmpty(query.Nonce) || query.Nonce.Length > 96) continue;
+                if (query?.Protocol != Program.Protocol || query.Request != Program.Request || string.IsNullOrEmpty(query.Nonce) || query.Nonce.Length > 96) continue;
                 Packet packet = Volatile.Read(ref _latest);
-                if (DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() - packet.SourceTimeMs > Program.StaleMs)
-                    packet = new Packet(1, "unavailable", packet.SourceTimeMs, "Native sensor samples are stale", []);
-                byte[] data = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(packet with { Nonce = query.Nonce }, Program.Json));
+                byte[] data = PacketBuilder.Reply(packet, query.Nonce, DateTimeOffset.UtcNow.ToUnixTimeMilliseconds());
                 await udp.SendAsync(data, request.RemoteEndPoint, cancellation);
             }
         }
@@ -178,21 +175,19 @@ internal static class ServiceCore
             await Task.WhenAny(reader, Task.Delay(5000, CancellationToken.None));
         }
     }
-    private static void Poll(BridgeConfig config, CancellationToken cancellation)
+    private static void Poll(CancellationToken cancellation)
     {
         while (!cancellation.IsCancellationRequested)
         {
             try
             {
                 using var source = new NativeSource();
-                if (!source.Board.Contains(config.ExpectedBoard, StringComparison.OrdinalIgnoreCase))
-                    throw new InvalidDataException("The detected motherboard does not match sensors.json.");
                 Program.Log("Native motherboard backend opened: " + source.Board);
                 string previous = "";
                 while (!cancellation.IsCancellationRequested)
                 {
                     var values = source.Read();
-                    Packet packet = PacketBuilder.Build(values, config.Sensors, DateTimeOffset.UtcNow.ToUnixTimeMilliseconds());
+                    Packet packet = PacketBuilder.Build(values, source.Board, DateTimeOffset.UtcNow.ToUnixTimeMilliseconds());
                     Volatile.Write(ref _latest, packet);
                     string state = packet.Status + ": " + packet.Detail;
                     if (state != previous) { Program.Log(state); previous = state; }
@@ -202,7 +197,7 @@ internal static class ServiceCore
             catch (Exception error)
             {
                 Program.Log("Native reader failed: " + error.Message);
-                Volatile.Write(ref _latest, new Packet(1, "unavailable", 0, "Native hardware reader failed; retrying", []));
+                Volatile.Write(ref _latest, new Packet(Program.Protocol, "unavailable", 0, "Native hardware reader failed; retrying", null, []));
                 if (cancellation.WaitHandle.WaitOne(15000)) return;
             }
         }
@@ -237,18 +232,29 @@ internal static class SelfTest
 {
     public static int Run()
     {
-        var mappings = new[] { new Mapping("/lpc/test/temperature/0", "Motherboard") };
-        var readings = new[] { new NativeReading(mappings[0].Identifier, "test", "raw", 31),
-            new NativeReading("/unconfigured", "test", "other", 50) };
+        var board = new BoardIdentity("Test manufacturer", "Test board", "1.0");
+        var readings = new[] { new NativeReading("/lpc/test/temperature/0", "test", "Temperature #1", 31),
+            new NativeReading("/another-chip/temperature/0", "another chip", "Raw channel", 50) };
         void Assert(bool result, string name) { if (!result) throw new Exception("FAILED: " + name); Console.WriteLine("PASS: " + name); }
-        var packet = PacketBuilder.Build(readings.Reverse(), mappings, 1234);
-        Assert(packet.Sensors.Length == 1 && packet.Sensors[0].Name == "Motherboard" && packet.Sensors[0].Celsius == 31, "stable identifiers survive enumeration order changes");
-        Assert(PacketBuilder.Build([readings[0] with { Celsius = null }], mappings, 1234).Status == "unavailable", "missing reading is unavailable, not zero");
-        Assert(PacketBuilder.Build([readings[0] with { Celsius = double.NaN }], mappings, 1234).Sensors.Length == 0, "NaN is rejected");
-        Assert(PacketBuilder.Build([readings[0] with { Celsius = 500 }], mappings, 1234).Sensors.Length == 0, "impossible temperature is rejected");
-        Assert(PacketBuilder.Build([readings[0] with { Celsius = 0 }], mappings, 1234).Sensors.Length == 1, "a valid configured zero-degree reading remains valid");
+        var packet = PacketBuilder.Build(readings.Reverse(), board, 1234);
+        Assert(packet.Sensors.Length == 2 && packet.Sensors.Single(s => s.Id == readings[0].Identifier).Celsius == 31, "all native identifiers survive enumeration order changes without board mappings");
+        Assert(packet.Sensors[1].Name == readings[0].Name && packet.Sensors[1].Hardware == "test", "raw names and hardware are preserved without aliases");
+        Assert(packet.Board == board && packet.Protocol == 2, "structured board identity accompanies protocol 2 samples");
+        Assert(PacketBuilder.Build(readings, board with { Manufacturer = "Other", Model = "Other board" }, 1234).Sensors.Length == 2, "other motherboards need no service configuration");
+        Assert(PacketBuilder.Build([readings[0] with { Celsius = null }], board, 1234).Status == "unavailable", "missing reading is unavailable, not zero");
+        Assert(PacketBuilder.Build([readings[0] with { Celsius = double.NaN }], board, 1234).Sensors.Length == 0, "NaN is rejected");
+        Assert(PacketBuilder.Build([readings[0] with { Celsius = double.PositiveInfinity }], board, 1234).Sensors.Length == 0, "infinity is rejected");
+        Assert(PacketBuilder.Build([readings[0] with { Celsius = 500 }], board, 1234).Sensors.Length == 0, "impossible temperature is rejected");
+        Assert(PacketBuilder.Build([readings[0] with { Celsius = 0 }], board, 1234).Sensors.Length == 1, "a valid zero-degree reading remains valid");
         Assert(packet.SourceTimeMs == 1234, "source timestamp is preserved");
-        try { PacketBuilder.Build([readings[0], readings[0]], mappings, 1234); Assert(false, "duplicate identity"); }
+        var reply = JsonSerializer.Deserialize<Packet>(PacketBuilder.Reply(packet, "test-nonce", 1234), Program.Json)!;
+        Assert(reply.Nonce == "test-nonce" && reply.Board == board && reply.Sensors.Length == 2, "wire reply preserves identity, readings, and request nonce");
+        var stale = JsonSerializer.Deserialize<Packet>(PacketBuilder.Reply(packet, "stale", 1234 + Program.StaleMs + 1), Program.Json)!;
+        Assert(stale.Status == "unavailable" && stale.Sensors.Length == 0 && stale.SourceTimeMs == 1234, "UDP replies do not refresh stale samples");
+        var large = packet with { Sensors = [new Reading("large", "test", new string('x', Program.MaxPacketBytes), 30)] };
+        var bounded = PacketBuilder.Reply(large, "large", 1234);
+        Assert(bounded.Length <= Program.MaxPacketBytes && JsonSerializer.Deserialize<Packet>(bounded, Program.Json)!.Status == "unavailable", "oversized inventories fail closed within UDP limits");
+        try { PacketBuilder.Build([readings[0], readings[0]], board, 1234); Assert(false, "duplicate identity"); }
         catch (InvalidDataException) { Console.WriteLine("PASS: duplicate identity is rejected"); }
         Console.WriteLine("All service logic tests passed.");
         return 0;

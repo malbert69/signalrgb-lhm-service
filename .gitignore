@@ -8,3 +8,5 @@
 /installed*.json
 *.zip
 *.backup-*
+/tools/upstream-cache/
+**/bin/
