@@ -1,0 +1,10 @@
+/bin/
+**/obj/
+/.vs/
+*.user
+*.suo
+/installation*.log
+/installation-error.txt
+/installed*.json
+*.zip
+*.backup-*
