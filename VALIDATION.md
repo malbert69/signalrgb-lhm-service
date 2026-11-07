@@ -1,6 +1,6 @@
 # Validation status
 
-Built and tested on the target PC. **Not installed yet.** Installation and final live SignalRGB UI validation await explicit approval.
+Service and plugin logic validation is described below. Final integration validation must also check native SignalRGB discovery, temperature registration, and unavailable-sensor behavior.
 
 Completed:
 

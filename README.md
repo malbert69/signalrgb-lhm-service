@@ -24,7 +24,9 @@ The service **does not set fan speeds** or change curves. Choose a temperature s
 - PawnIO 2.2 was already installed on the target PC. The installer does not install or alter that shared driver.
 - Administrator rights are required to install/start the service and for direct motherboard I/O. The plugin runs in SignalRGB normally.
 
-Run `Install-Service.ps1` in an administrator PowerShell. It copies the compiled `bin` directory and `sensors.json` to `C:\Program Files\SignalRGB Sensor Bridge`, installs a delayed automatic Windows service with restart recovery, and copies `ASUS_LHM_Temperatures.js` to the current Windows Documents folder under `WhirlwindFX\Plugins`. An explicit `-PluginDirectory` overrides that location.
+Run `.\Install.cmd` and approve the Windows administrator prompt. The launcher uses a process-only execution-policy override, so it also works when PowerShell blocks scripts by default. It does not change the saved user or machine execution policy. Alternatively, run `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Install-Service.ps1 -Elevate`.
+
+The installer copies the compiled `bin` directory and `sensors.json` to `C:\Program Files\SignalRGB Sensor Bridge`, installs a delayed automatic Windows service with restart recovery, and copies `ASUS_LHM_Temperatures.js` to the current Windows Documents folder under `WhirlwindFX\Plugins`. An explicit `-PluginDirectory` overrides that location. From a source-only checkout, run `Build.ps1` first to create `bin`.
 
 Restart SignalRGB after installation if the virtual provider does not appear automatically. Look for **ASUS PRIME Z790-P WIFI Temperatures**, then **Motherboard** and **VRM Thermistor** in the temperature dropdown.
 

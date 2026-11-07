@@ -1,10 +1,18 @@
-param([string]$PluginDirectory)
+param([string]$PluginDirectory,[switch]$Elevate)
 $ErrorActionPreference='Stop'
 trap { $_ | Out-String | Set-Content -LiteralPath (Join-Path $PSScriptRoot 'installation-error.txt'); exit 1 }
+$principal=[Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())
+if(-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+  if(-not $Elevate) {throw 'Run Install.cmd, or run this installer as administrator.'}
+  if(-not $PluginDirectory) {$PluginDirectory=Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'WhirlwindFX\Plugins'}
+  # Double trailing backslashes before the closing quote for Windows argument parsing.
+  $quotedPluginDirectory='"'+[regex]::Replace($PluginDirectory,'(\\+)$','$1$1')+'"'
+  $arguments='-NoProfile -ExecutionPolicy Bypass -File "'+$PSCommandPath+'" -PluginDirectory '+$quotedPluginDirectory
+  $installer=Start-Process -FilePath (Join-Path $env:WINDIR 'System32\WindowsPowerShell\v1.0\powershell.exe') -ArgumentList $arguments -Verb RunAs -WindowStyle Hidden -Wait -PassThru
+  exit $installer.ExitCode
+}
 Start-Transcript -LiteralPath (Join-Path $PSScriptRoot 'installation.log') -Force | Out-Null
 $serviceName='SignalRgbSensorBridge'
-$principal=[Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())
-if(-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {throw 'Run this installer as administrator.'}
 $installDirectory=Join-Path $env:ProgramFiles 'SignalRGB Sensor Bridge'
 $dataDirectory=Join-Path $env:ProgramData $serviceName
 $sourceDirectory=Join-Path $PSScriptRoot 'bin'
