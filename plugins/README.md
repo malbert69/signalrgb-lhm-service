@@ -19,7 +19,7 @@ The original [ASUS PRIME Z790-P WIFI plugin](../ASUS_LHM_Temperatures.js) has ea
 | Shuttle | 1 |
 | Supermicro | 1 |
 
-Install with the root installer or copy only the relevant JS file into SignalRGB's Plugins directory. No catalog or JSON file is needed by the installed service or plugins.
+The root installer detects the motherboard through Windows SMBIOS/CIM, installs only its matching plugin, and backs up other packaged plugins left by older installations. Unknown or ambiguous boards stop installation before service or plugin changes. You can also copy the relevant JS file into SignalRGB's Plugins directory manually. `install-manifest.json` contains installer-only identity metadata generated from the plugins. No catalog or JSON file is needed by the running service or plugins.
 
 ## ASRock
 

@@ -6,9 +6,11 @@
 import udp from "@SignalRGB/udp";
 
 export function Name() { return "Gigabyte P67A-UD3R-B3 Temperatures (LHM)"; }
-export function Version() { return "0.2.0"; }
+export function Version() { return "0.2.1"; }
 export function Publisher() { return "Local custom plugin"; }
 export function Type() { return "network"; }
+export function DeviceType() { return "lightingcontroller"; }
+export function SubdeviceController() { return true; }
 export function Size() { return [1, 1]; }
 export function DefaultPosition() { return [0, 0]; }
 export function DefaultScale() { return 1; }

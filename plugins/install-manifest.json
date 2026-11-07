@@ -1,0 +1,2643 @@
+{
+  "schemaVersion": 1,
+  "plugins": [
+    {
+      "path": "ASUS_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC.",
+        "ASUS"
+      ],
+      "models": [
+        "PRIME Z790-P WIFI"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_A320M_HDV_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "A320M-HDV"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_AB350M_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "AB350M"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_AB350M_HDV_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "AB350M-HDV"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_AB350M_Pro4_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "AB350M Pro4"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_AB350_Pro4_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "AB350 Pro4"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_AOD790GX_128M_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "ASRock AOD790GX/128M"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_B450M_Pro4_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "B450M Pro4"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_B450M_Pro4_R2_0_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "B450M Pro4 R2.0"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_B450M_Steel_Legend_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "B450M Steel Legend"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_B450_Pro4_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "B450 Pro4"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_B450_Steel_Legend_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "B450 Steel Legend"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_B650M_C_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "B650M-C",
+        "B650M-CW",
+        "B650M-CWX",
+        "B650M-CX"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_B850M_STEEL_LEGEND_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "B850M Steel Legend WiFi"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_B85M_DGS_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "B85M-DGS"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_Fatal1ty_AB350_Gaming_K4_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "Fatal1ty AB350 Gaming K4"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_H61M_DGS_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "H61M-DGS"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_X399_Phantom_Gaming_6_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "X399 Phantom Gaming 6"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_X570_Phantom_Gaming_4_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "X570 Phantom Gaming 4"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_X570_Phantom_Gaming_ITX_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "X570 Phantom Gaming-ITX/TB3"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_X570_Taichi_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "X570 Taichi"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_X870E_NOVA_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "X870E Nova WiFi"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_X870E_TAICHI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "X870E Taichi",
+        "X870E Taichi Lite"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_Z690_Extreme_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "Z690 Extreme",
+        "Z690 Extreme WiFi 6E"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_Z690_Steel_Legend_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "Z690 Steel Legend",
+        "Z690 Steel Legend WiFi 6E"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_Z77Pro4M_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "Z77 Pro4-M"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_Z790_Nova_WiFi_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "Z790 Nova WiFi"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_Z790_Pro_RS_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "Z790 Pro RS",
+        "Z790 Pro RS WiFi"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_Z790_Taichi_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "Z790 Taichi",
+        "Z790 Taichi Carrara"
+      ]
+    },
+    {
+      "path": "plugins/ASRock_880GMH_USB3_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASRock"
+      ],
+      "models": [
+        "880GMH/USB3"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_B150M_C_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "B150M-C"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_B150M_C_D3_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "B150M-C D3"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_CROSSHAIR_III_FORMULA_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "Crosshair III Formula"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_M2N_SLI_Deluxe_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "M2N-SLI DELUXE"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_M4A79XTD_EVO_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "M4A79XTD EVO"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_P6T_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "P6T"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_P6X58D_E_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "P6X58D-E"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_P8P67_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "P8P67",
+        "P8P67 REV 3.1"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_P8P67_EVO_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "P8P67 EVO"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_P8P67_M_PRO_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "P8P67-M PRO"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_P8P67_PRO_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "P8P67 PRO"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_P8Z68_V_PRO_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "P8Z68-V PRO"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_P8Z77_V_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "P8Z77-V"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_P9X79_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "P9X79"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_PRIME_B650_PLUS_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "PRIME B650-PLUS"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_PRIME_X370_PRO_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "PRIME X370-PRO"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_PRIME_X870_P_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "PRIME X870-P"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_PROART_B760_CREATOR_D4_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "PROART B760-CREATOR D4"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_PROART_X670E_CREATOR_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "PROART X670E-CREATOR WIFI"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_PROART_X870E_CREATOR_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "PROART X870E-CREATOR WIFI"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_RAMPAGE_EXTREME_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "Rampage Extreme"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_RAMPAGE_II_GENE_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "Rampage II GENE"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_CROSSHAIR_VIII_DARK_HERO_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG CROSSHAIR VIII DARK HERO"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_CROSSHAIR_VIII_FORMULA_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG CROSSHAIR VIII FORMULA"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_CROSSHAIR_VIII_HERO_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG CROSSHAIR VIII HERO"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_CROSSHAIR_VIII_HERO_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG CROSSHAIR VIII HERO (WI-FI)"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_CROSSHAIR_X670E_GENE_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG CROSSHAIR X670E GENE"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_CROSSHAIR_X670E_HERO_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG CROSSHAIR X670E HERO"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_CROSSHAIR_X870E_APEX_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG CROSSHAIR X870E APEX"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_CROSSHAIR_X870E_HERO_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG CROSSHAIR X870E HERO"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_MAXIMUS_XII_Z490_FORMULA_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG MAXIMUS XII FORMULA"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_MAXIMUS_XI_FORMULA_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG MAXIMUS XI FORMULA"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_MAXIMUS_X_APEX_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG MAXIMUS X APEX"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_MAXIMUS_X_HERO_WIFI_AC_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG MAXIMUS X HERO (WI-FI AC)"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_MAXIMUS_Z690_EXTREME_GLACIAL_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG MAXIMUS Z690 EXTREME GLACIAL"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_MAXIMUS_Z690_FORMULA_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG MAXIMUS Z690 FORMULA"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_MAXIMUS_Z690_HERO_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG MAXIMUS Z690 HERO"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_MAXIMUS_Z790_DARK_HERO_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG MAXIMUS Z790 DARK HERO"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_MAXIMUS_Z790_HERO_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG MAXIMUS Z790 HERO"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_STRIX_B550_F_GAMING_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG STRIX B550-F GAMING (WI-FI)"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_STRIX_B550_I_GAMING_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG STRIX B550-I GAMING"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_STRIX_B760_I_GAMING_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG STRIX B760-I GAMING WIFI"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_STRIX_B850_E_GAMING_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG STRIX B850-E GAMING WIFI"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_STRIX_B850_I_GAMING_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG STRIX B850-I GAMING WIFI"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_STRIX_X470_I_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG STRIX X470-I GAMING"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_STRIX_X570_I_GAMING_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG STRIX X570-I GAMING"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_STRIX_X670E_A_GAMING_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG STRIX X670E-A GAMING WIFI"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_STRIX_X670E_E_GAMING_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG STRIX X670E-E GAMING WIFI"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_STRIX_X670E_F_GAMING_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG STRIX X670E-F GAMING WIFI"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_STRIX_X870E_E_GAMING_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG STRIX X870E-E GAMING WIFI"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_STRIX_X870_I_GAMING_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG STRIX X870-I GAMING WIFI"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_STRIX_Z790_E_GAMING_WIFI_II_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG STRIX Z790-E GAMING WIFI II"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_ZENITH_EXTREME_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG ZENITH EXTREME"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_ROG_ZENITH_II_EXTREME_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "ROG ZENITH II EXTREME"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_TUF_GAMING_B450_PLUS_II_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "TUF GAMING B450-PLUS II"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_TUF_GAMING_B550M_PLUS_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "TUF GAMING B550M-PLUS (WI-FI)"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_TUF_GAMING_B760M_PLUS_WIFI_D4_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "TUF GAMING B760M-PLUS WIFI D4"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_TUF_GAMING_B850M_PLUS_II_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "TUF GAMING B850M-PLUS II"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_TUF_GAMING_X570_PLUS_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "TUF GAMING X570-PLUS (WI-FI)"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_TUF_X470_PLUS_GAMING_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "TUF X470-PLUS GAMING"
+      ]
+    },
+    {
+      "path": "plugins/ASUS_Z170_A_LHM_Temperatures.js",
+      "manufacturers": [
+        "ASUSTeK COMPUTER INC."
+      ],
+      "models": [
+        "Z170-A"
+      ]
+    },
+    {
+      "path": "plugins/Biostar_B660GTN_LHM_Temperatures.js",
+      "manufacturers": [
+        "BIOSTAR Group",
+        "BIOSTAR"
+      ],
+      "models": [
+        "B660GTN"
+      ]
+    },
+    {
+      "path": "plugins/Biostar_X670E_Valkyrie_LHM_Temperatures.js",
+      "manufacturers": [
+        "BIOSTAR Group",
+        "BIOSTAR"
+      ],
+      "models": [
+        "X670E VALKYRIE"
+      ]
+    },
+    {
+      "path": "plugins/DFI_LP_BI_P45_T2RS_Elite_LHM_Temperatures.js",
+      "manufacturers": [
+        "DFI",
+        "DFI Inc.",
+        "DFI Inc"
+      ],
+      "models": [
+        "LP BI P45-T2RS Elite"
+      ]
+    },
+    {
+      "path": "plugins/DFI_LP_DK_P55_T3EH9_LHM_Temperatures.js",
+      "manufacturers": [
+        "DFI",
+        "DFI Inc.",
+        "DFI Inc"
+      ],
+      "models": [
+        "LP DK P55-T3eH9"
+      ]
+    },
+    {
+      "path": "plugins/ECS_A890GXM_A_LHM_Temperatures.js",
+      "manufacturers": [
+        "ECS",
+        "ELITEGROUP"
+      ],
+      "models": [
+        "A890GXM-A"
+      ]
+    },
+    {
+      "path": "plugins/EVGA_X58_3X_SLI_LHM_Temperatures.js",
+      "manufacturers": [
+        "EVGA",
+        "EVGA Corp."
+      ],
+      "models": [
+        "132-BL-E758"
+      ]
+    },
+    {
+      "path": "plugins/EVGA_X58_SLI_Classified_LHM_Temperatures.js",
+      "manufacturers": [
+        "EVGA",
+        "EVGA Corp."
+      ],
+      "models": [
+        "X58 SLI Classified"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_A320M_S2H_CF_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "A320M-S2H-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_AB350_Gaming_3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "AB350-Gaming 3-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_AX370_Gaming_5_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "AX370-Gaming 5"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_AX370_Gaming_K7_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "AX370-Gaming K7"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B360M_H_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B360M H"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B360_AORUS_GAMING_3_WIFI_CF_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B360 AORUS GAMING 3 WIFI-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B450M_AORUS_ELITE_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B450M AORUS ELITE",
+        "B450M AORUS ELITE-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B450M_DS3H_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B450M DS3H",
+        "B450M DS3H V2",
+        "B450M DS3H V2-CF",
+        "B450M DS3H WIFI",
+        "B450M DS3H WIFI-CF",
+        "B450M DS3H-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B450M_GAMING_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B450M GAMING",
+        "B450M GAMING-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B450M_H_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B450M H",
+        "B450M H-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B450M_K_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B450M K",
+        "B450M K-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B450M_S2H_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B450M S2H",
+        "B450M S2H V2",
+        "B450M S2H V2-CF",
+        "B450M S2H-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B450_AORUS_ELITE_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B450 AORUS ELITE",
+        "B450 AORUS ELITE V2"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B450_AORUS_M_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B450M AORUS M",
+        "B450M AORUS M-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B450_AORUS_PRO_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B450 AORUS PRO",
+        "B450 AORUS PRO WIFI"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B450_GAMING_X_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B450 GAMING X"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B450_I_AORUS_PRO_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B450M I AORUS PRO WIFI",
+        "B450M I AORUS PRO WIFI-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550I_AORUS_PRO_AX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550I AORUS PRO AX"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550M_AORUS_ELITE_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550M AORUS ELITE"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550M_AORUS_PRO_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550M AORUS PRO",
+        "B550M AORUS PRO-P"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550M_AORUS_PRO_AX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550M AORUS PRO AX"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550M_DS3H_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550M DS3H"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550M_DS3H_AC_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550M DS3H AC"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550M_GAMING_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550M GAMING"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550M_H_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550M H"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550M_S2H_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550M S2H"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550_AORUS_ELITE_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550 AORUS ELITE",
+        "B550 AORUS ELITE V2"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550_AORUS_ELITE_AX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550 AORUS ELITE AX",
+        "B550 AORUS ELITE AX V2",
+        "B550 AORUS ELITE AX V3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550_AORUS_MASTER_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550 AORUS MASTER"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550_AORUS_PRO_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550 AORUS PRO",
+        "B550 AORUS PRO V2"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550_AORUS_PRO_AC_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550 AORUS PRO AC"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550_AORUS_PRO_AX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550 AORUS PRO AX"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550_GAMING_X_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550 GAMING X",
+        "B550 GAMING X V2"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550_UD_AC_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550 UD AC",
+        "B550 UD AC-Y1"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B550_VISION_D_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B550 VISION D",
+        "B550 VISION D-P"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B560I_AORUS_PRO_AX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B560I AORUS PRO AX"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B560M_AORUS_ELITE_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B560M AORUS ELITE"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B560M_AORUS_PRO_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B560M AORUS PRO"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B560M_AORUS_PRO_AX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B560M AORUS PRO AX"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B650E_AORUS_ELITE_AX_ICE_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B650E AORUS ELITE AX ICE"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B650I_AX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "A620I AX",
+        "B650I AX"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B650M_AORUS_ELITE_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B650M AORUS ELITE"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B650M_AORUS_ELITE_AX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B650M AORUS ELITE AX"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B650M_AORUS_PRO_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B650M AORUS PRO"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B650M_AORUS_PRO_AX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B650M AORUS PRO AX"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B650_AORUS_ELITE_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B650 AORUS ELITE"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B650_AORUS_ELITE_AX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B650 AORUS ELITE AX"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B650_AORUS_ELITE_AX_ICE_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B650 AORUS ELITE AX ICE"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B650_AORUS_ELITE_AX_V2_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B650 AORUS ELITE AX V2"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B650_AORUS_ELITE_V2_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B650 AORUS ELITE V2"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B650_EAGLE_AX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B650 EAGLE AX"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B650_GAMING_X_AX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B650 GAMING X AX"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B660M_DS3H_AX_DDR4_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B660M DS3H AX DDR4"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B660_DS3H_AC_DDR4_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B660 DS3H AC DDR4",
+        "B660 DS3H AC DDR4-Y1"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B660_DS3H_DDR4_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B660 DS3H DDR4",
+        "B660 DS3H DDR4-Y1"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_B75M_D3H_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "B75M-D3H"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_EP45_DS3R_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "EP45-DS3R"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_EP45_UD3R_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "EP45-UD3R"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_EX58_EXTREME_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "EX58-EXTREME"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_EX58_UD3R_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "EX58-UD3R"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_G41MT_S2_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "G41MT-S2"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_G41MT_S2P_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "G41MT-S2P"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_G41M_COMBO_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "G41M-Combo"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_H55N_USB3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "H55N-USB3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_H55_USB3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "H55-USB3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_H61M_DS2_REV_1_2_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "H61M-DS2 REV 1.2"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_H61M_USB3_B3_REV_2_0_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "H61M-USB3-B3 REV 2.0"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_H67A_UD3H_B3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "H67A-UD3H-B3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_H67A_USB3_B3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "H67A-USB3-B3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_H81M_HD3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "H81M-HD3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_H97_D3H_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "H97-D3H-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_MA770T_UD3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "GA-MA770T-UD3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_MA770T_UD3P_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "GA-MA770T-UD3P"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_MA785GMT_UD2H_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "GA-MA785GMT-UD2H"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_MA785GM_US2H_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "GA-MA785GM-US2H"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_MA78LM_S2H_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "GA-MA78LM-S2H"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_MA790X_DS4_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "GA-MA790X-DS4"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_MA790X_UD3P_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "GA-MA790X-UD3P"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_P35_DS3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "P35-DS3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_P35_DS3L_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "P35-DS3L"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_P55A_UD3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "P55A-UD3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_P55M_UD4_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "P55M-UD4"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_P55_UD4_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "P55-UD4"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_P67A_UD3R_B3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "P67A-UD3R-B3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_P67A_UD3_B3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "P67A-UD3-B3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_P67A_UD4_B3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "P67A-UD4-B3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X38_DS5_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X38-DS5"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X399_AORUS_Gaming_7_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X399 AORUS Gaming 7"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X470_AORUS_GAMING_7_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X470 AORUS GAMING 7 WIFI-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X570_AORUS_MASTER_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X570 AORUS MASTER"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X570_AORUS_PRO_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X570 AORUS PRO"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X570_AORUS_ULTRA_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X570 AORUS ULTRA"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X570_GAMING_X_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X570 GAMING X"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X58A_UD3R_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X58A-UD3R"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X670E_AORUS_XTREME_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X670E AORUS XTREME"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X670_AORUS_ELITE_AX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X670 AORUS ELITE AX"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X79_UD3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X79-UD3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X870E_AORUS_PRO_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X870E AORUS PRO"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X870E_AORUS_PRO_ICE_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X870E AORUS PRO ICE"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X870E_AORUS_XTREME_AI_TOP_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X870E AORUS XTREME AI TOP"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X870_AORUS_ELITE_WIFI7_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X870 AORUS ELITE WIFI7"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_X870_AORUS_ELITE_WIFI7_ICE_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "X870 AORUS ELITE WIFI7 ICE"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z170N_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z170N-WIFI-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z390_AORUS_PRO_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z390 AORUS PRO-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z390_AORUS_ULTRA_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z390 AORUS ULTRA"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z390_M_GAMING_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z390 M GAMING-CF"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z390_UD_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z390 UD"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z68AP_D3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z68AP-D3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z68A_D3H_B3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z68A-D3H-B3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z68XP_UD3R_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z68XP-UD3R"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z68X_UD3H_B3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z68X-UD3H-B3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z68X_UD7_B3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z68X-UD7-B3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z690_AORUS_MASTER_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z690 AORUS MASTER"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z690_AORUS_PRO_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z690 AORUS PRO"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z690_AORUS_ULTRA_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z690 AORUS ULTRA"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z690_GAMING_X_DDR4_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z690 GAMING X DDR4"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z790_AORUS_PRO_X_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z790 AORUS PRO X",
+        "Z790 AORUS PRO X WIFI7"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z790_GAMING_X_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z790 GAMING X"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z790_GAMING_X_AX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z790 GAMING X AX"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z790_UD_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z790 UD"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_Z790_UD_AC_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "Z790 UD AC"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_965P_S3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "965P-S3"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_970A_DS3P_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "970A-DS3P",
+        "970A-DS3P FX"
+      ]
+    },
+    {
+      "path": "plugins/Gigabyte_970A_UD3_LHM_Temperatures.js",
+      "manufacturers": [
+        "Gigabyte Technology Co., Ltd.",
+        "Gigabyte Technology Co., Ltd",
+        "Gigabyte"
+      ],
+      "models": [
+        "GA-970A-UD3"
+      ]
+    },
+    {
+      "path": "plugins/MSI_B360M_PRO_VDH_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "B360M PRO-VDH (MS-7B24)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_B450A_PRO_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "B450-A PRO (MS-7B86)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_B550A_PRO_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "B550-A PRO (MS-7C56)",
+        "PRO B550-VC (MS-7C56)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_B650M_Gaming_Plus_Wifi_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "B650M GAMING PLUS WIFI (MS-7E24)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_X570_Gaming_Plus_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MPG X570 GAMING PLUS (MS-7C37)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_X570_MS7C35_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MEG X570 ACE",
+        "MEG X570 ACE (MS-7C35)",
+        "MEG X570 UNIFY",
+        "MEG X570 UNIFY (MS-7C35)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_X870E_ACE_MAX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MEG X870E ACE MAX (MS-7E85)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_X870E_CARBON_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MPG X870E CARBON WIFI (MS-7E49)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_X870E_EDGE_TI_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MPG X870E EDGE TI WIFI (MS-7E59)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_X870E_GODLIKE_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MEG X870E GODLIKE (MS-7E48)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_X870E_TOMAHAWK_MAX_WIFI_PZ_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MAG X870E TOMAHAWK MAX WIFI PZ (MS-7E84)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_X870E_TOMAHAWK_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MAG X870E TOMAHAWK WIFI (MS-7E59)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z270_PC_MATE_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "Z270 PC MATE",
+        "Z270 PC MATE (MS-7A72)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z390_GAMING_EDGE_AC_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MPG Z390 GAMING EDGE AC (MS-7B17)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z68_MS7672_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "P67A-GD80",
+        "P67A-GD80 (MS-7672)",
+        "Z68A-GD80",
+        "Z68A-GD80 (MS-7672)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z77_MS7751_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "Z77 MPower",
+        "Z77 MPower (MS-7751)",
+        "Z77A-GD55",
+        "Z77A-GD55 (MS-7751)",
+        "Z77A-GD65",
+        "Z77A-GD65 (MS-7751)",
+        "Z77A-GD65 GAMING",
+        "Z77A-GD65 GAMING (MS-7751)",
+        "Z77A-GD80",
+        "Z77A-GD80 (MS-7757)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z790_GODLIKE_MAX_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MEG Z790 GODLIKE MAX (MS-7D85)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z890A_PRO_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "PRO Z890-A WIFI (MS-7E32)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z890I_EDGE_TI_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MPG Z890I EDGE TI WIFI (MS-7E33)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z890P_PRO_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "PRO Z890-P WIFI (MS-7E34)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z890S_PRO_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "PRO Z890-S WIFI (MS-7E54)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z890S_PRO_WIFI_PROJECT_ZERO_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "PRO Z890-S WIFI PZ (MS-7E58)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z890_ACE_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MEG Z890 ACE (MS-7E22)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z890_CARBON_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MPG Z890 CARBON WIFI (MS-7E17)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z890_EDGE_TI_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MPG Z890 EDGE TI WIFI (MS-7E19)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z890_GAMING_PLUS_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "Z890 GAMING PLUS WIFI (MS-7E34)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z890_TOMAHAWK_WIFI_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MAG Z890 TOMAHAWK WIFI (MS-7E32)"
+      ]
+    },
+    {
+      "path": "plugins/MSI_Z890_UNIFY_X_LHM_Temperatures.js",
+      "manufacturers": [
+        "Micro-Star International Co., Ltd.",
+        "Micro-Star International Co., Ltd",
+        "MSI"
+      ],
+      "models": [
+        "MEG Z890 UNIFY-X (MS-7E20)"
+      ]
+    },
+    {
+      "path": "plugins/Shuttle_FH67_LHM_Temperatures.js",
+      "manufacturers": [
+        "Shuttle Inc.",
+        "Shuttle"
+      ],
+      "models": [
+        "FH67"
+      ]
+    },
+    {
+      "path": "plugins/Supermicro_X11SWN_E_LHM_Temperatures.js",
+      "manufacturers": [
+        "Supermicro"
+      ],
+      "models": [
+        "X11SWN-E"
+      ]
+    }
+  ]
+}
